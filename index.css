@@ -1,0 +1,78 @@
+body {
+    /* css3引入的”vw”和”vh”基于宽度/高度相对于窗口大小，”vw”=”view width”, “vh”=”view height”; 
+ 以上我们称为视窗单位允许我们更接近浏览器窗口来定义大小。  IE10+*/
+    /* 充满整个页面 */
+    width: 100vw;
+    height: 100vh;
+    /* flex弹性布局 */
+    display: flex;
+    /* 水平居中 */
+    justify-content: center;
+    /* 垂直居中 */
+    align-items: center;
+    /* 背景颜色 */
+    background: #2c3e50;
+}
+
+* {
+    /* 清除浏览器默认内外边距 */
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    /* 字体颜色 */
+    color: #9b59b6;
+    /* 字体大小 */
+    font-size: 5em;
+    /* 字体粗细 */
+    font-weight: bold;
+    /* text-transform 属性控制文本的大小写。 */
+    /* capitalize	文本中的每个单词以大写字母开头。 */
+    /* uppercase	定义仅有大写字母。 */
+    /* lowercase	定义无大写字母，仅有小写字母。 */
+    /* inherit	规定应该从父元素继承 text-transform 属性的值。 */
+    text-transform: uppercase;
+    /* cursor 属性规定要显示的光标的类型（形状）。 */
+    cursor: pointer;
+}
+
+div span {
+    /* 相对定位 相对与自己进行定位 不会脱离文档流 */
+    position: relative;
+    /* 将其改变成行块盒 */
+    display: inline-block;
+}
+
+
+/* 变色动画 */
+
+.changeColor {
+    /* 动画名 */
+    animation-name: changeColor;
+    /* 动画时长 */
+    animation-duration: 1s;
+    /* 动画方向 */
+    animation-direction: alternate;
+    /* 动画循环次数 */
+    animation-iteration-count: 2;
+    /* 动画过渡类型 */
+    animation-timing-function: linear;
+}
+
+
+/* 变色 ++ 放大缩小 */
+
+@keyframes changeColor {
+    /* 从什么颜色到什么颜色 */
+    /* 未设置0%默认颜色为之前设置的字体颜色 */
+    50% {
+        color: #f1c40f;
+        /* 变换之放大缩小  大于1 ---放大 小于1----缩小 */
+        transform: scale(1.5);
+    }
+    to {
+        color: #d81781;
+        transform: scale(0.5);
+    }
+}
